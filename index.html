@@ -14,10 +14,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-slate-300 my-[8rem] mx-4 sm:mx-[18rem] bg-slate-200">
-  <header aria-label="Site Header" class="my-4 absolute inset-x-0 top-0" hx-get="/components/header.html" hx-trigger="load"></header>
-  <div id="banner" class="flex mt-[7rem] justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
-  <div class="flex w-96 my-8 justify-self-center mx-auto border-t border-slate-400"></div>
-  <div id="banner" class="flex justify-center" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
+<body class="bg-slate-200">
+  <header aria-label="Site Header" class="fixed bg-slate-200 mx-auto w-full scroll:drop-shadow-sm top-0 px-64 py-1 z-50" hx-get="/components/header.html" hx-trigger="load"></header>
+  <div class="my-[8rem] mx-4 sm:mx-[18rem]">
+    <div id="banner" class="flex mt-[7rem] justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
+    <div class="flex w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
+    <div id="appshowcase" class="flex justify-center" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
+  </div>
 </body>
 </html>
