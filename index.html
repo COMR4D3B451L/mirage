@@ -17,13 +17,13 @@
 <body class="bg-slate-200">
   <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header" ></header>
   <a id="top-anchor"></a>
-  <div class="sm:my-[8rem] mx-4 sm:mx-[18rem]">
-    <div id="banner" class="flex mt-[7rem] justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
+  <div class="xl:my-[8rem] mx-4 xl:mx-[18rem]">
+    <div id="banner" class="flex flex-wrap sm:flex-nowrap mt-[7rem] justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
     <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
     <a id="products-anchor"></a>
-    <div id="appshowcase" class="flex flex-wrap justify-center" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
+    <div id="appshowcase" class="flex flex-wrap xl:flex-nowrap justify-center" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
     <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
-    <div id="journalsystem" class="flex flex-wrap justify-center" hx-get="/pages/home/journal.html" hx-trigger="load"></div>
+    <div id="journalsystem" class="flex flex-wrap xl:flex-nowrap justify-center" hx-get="/pages/home/journal.html" hx-trigger="load"></div>
     <a id="about-anchor"></a>
   </div>
   <footer aria-label="Site Footer" class="bg-slate-300" hx-get="/components/footer.html" hx-trigger="load"></footer>
