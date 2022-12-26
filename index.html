@@ -46,4 +46,11 @@
   </div>
   <footer aria-label="Site Footer" class="bg-slate-300" hx-get="/components/footer.html" hx-trigger="load"></footer>
 </body>
+<script>
+  let scrollTop, scrollLeft
+  window.addEventListener("scroll", (event) => {
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  });
+</script>
 </html>

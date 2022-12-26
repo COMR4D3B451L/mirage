@@ -259,11 +259,8 @@
         <!--End mc_embed_signup-->
       </div>
       <script>
-        function positionDiv() {
-            // Get the current scroll position
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-          
+        function positionDiv(scrollTop, scrollLeft) {
+
             // Get the dimensions of the div element
             var div = document.getElementById('editmodal');
             var divWidth = div.offsetWidth;
@@ -272,21 +269,20 @@
             // Calculate the position of the div element
             var top = scrollTop + (window.innerHeight - divHeight) / 2;
             var left = scrollLeft + (window.innerWidth - divWidth) / 2;
-          
             // Set the position of the div element
             div.style.top = top + 'px';
             div.style.left = left + 'px';
+
           }
           
           // Call the function when the page loads
-          window.onload = positionDiv;
+          window.onload = positionDiv(scrollTop, scrollLeft);
           
           // Call the function whenever the user scrolls
-          window.onscroll = positionDiv;
+          window.onscroll = positionDiv(scrollTop, scrollLeft);
       </script>
       <script>
         var EMAIL = document.getElementById('emailInput').value
-        console.log(EMAIL)
         if (EMAIL) {
             document.getElementById("mce-EMAIL").value = EMAIL;
         }
