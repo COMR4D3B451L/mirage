@@ -10,18 +10,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="manifest" href="assets/img/site.webmanifest">
+  <script href="assets/js/site.email.js"></script>
   <script src="https://unpkg.com/htmx.org@1.8.4"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-slate-200">
-  <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 px-16 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header" ></header>
   <a id="top-anchor"></a>
+  <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 px-16 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header" ></header>
   <div class="xl:my-[8rem] mx-4 2xl:mx-[18rem]">
     <div id="banner" class="flex flex-wrap gap-20 sm:flex-nowrap mt-[7rem] px-16 justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
-    <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
     <a id="products-anchor"></a>
+    <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
     <div id="appshowcase" class="flex flex-wrap xl:flex-nowrap justify-center px-16" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
     <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
     <div id="journalsystem" class="flex flex-wrap xl:flex-nowrap justify-center" hx-get="/pages/home/journal.html" hx-trigger="load"></div>
