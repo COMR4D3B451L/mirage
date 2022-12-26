@@ -19,21 +19,29 @@
 
 <body class="bg-slate-200">
   <a id="top-anchor"></a>
-  <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 px-16 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header"></header>
+  <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 px-4 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header"></header>
   <div class="xl:my-[8rem] mx-4 2xl:mx-[18rem]">
-    <div id="banner" class="flex flex-wrap gap-20 sm:flex-nowrap mt-[7rem] px-16 justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
+    <div id="banner" class="flex flex-wrap gap-20 sm:flex-nowrap mt-[7rem] px-4 sm:px-16 justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
 
     <a id="products-anchor"></a>
-    <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
-    <div id="appshowcase" class="flex flex-wrap xl:flex-nowrap justify-center px-16" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
-    <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
-    <div id="journalsystem" class="flex flex-wrap xl:flex-nowrap justify-center" hx-get="/pages/home/journal.html" hx-trigger="load"></div>
+    <div class="flex mx-auto justify-center my-6 select-none">
+      <p class="text-md sm:text-xl my-8 bg-white text-black px-4 py-2 rounded-full">
+        AI-Powered platform for private clinics 🤖
+      </p>
+    </div>
+    <div id="appshowcase" class="flex flex-wrap xl:flex-nowrap justify-center px-4 sm:px-16" hx-get="/pages/home/clinihub.html" hx-trigger="load"></div>
+    <div class="flex mx-auto justify-center my-6 select-none">
+      <p class="text-md sm:text-xl my-8 bg-white text-black px-4 py-2 rounded-full">
+        One-stop-shop private healthcare 🏪
+      </p>
+    </div>
+    <div id="journalsystem" class="flex flex-wrap xl:flex-nowrap justify-center px-4 sm:px-16" hx-get="/pages/home/journal.html" hx-trigger="load"></div>
     <a id="about-anchor"></a>
     <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
-    <div id="about" class="flex flex-wrap xl:flex-nowrap justify-center px-16" hx-get="/pages/about/about.html" hx-trigger="load"></div>
+    <div id="about" class="flex flex-wrap xl:flex-nowrap justify-center px-4 sm:px-16" hx-get="/pages/about/about.html" hx-trigger="load"></div>
     <a id="contact-anchor"></a>
     <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
-    <div id="contact" class="flex flex-wrap xl:flex-nowrap justify-center w-full px-16" hx-get="/pages/contact/contact.html" hx-trigger="load"></div>
+    <div id="contact" class="flex flex-wrap xl:flex-nowrap justify-center w-full px-4 sm:px-16" hx-get="/pages/contact/contact.html" hx-trigger="load"></div>
     <div id="modal-place" class=""></div>
   </div>
   <footer aria-label="Site Footer" class="bg-slate-300" hx-get="/components/footer.html" hx-trigger="load"></footer>
