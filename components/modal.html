@@ -189,7 +189,7 @@
 
           function closeModal() {
             modal = document.getElementById("editmodal");
-            modal.classList.add("hidden");
+            modal.remove()
           }
 
           dragElement(document.getElementById("editmodal"));
@@ -285,7 +285,8 @@
           window.onscroll = positionDiv;
       </script>
       <script>
-        const EMAIL = urlParams.get("EMAIL");
+        var EMAIL = document.getElementById('emailInput').value
+        console.log(EMAIL)
         if (EMAIL) {
             document.getElementById("mce-EMAIL").value = EMAIL;
         }
