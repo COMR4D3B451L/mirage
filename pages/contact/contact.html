@@ -1,59 +1,42 @@
-<section class="">
-    <h1 class="text-xl sm:text-3xl font-bold">
-        Contact us
-    </h1>
-    <div class="mx-auto max-w-screen-xl">
-      <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-        <div class="lg:col-span-2 lg:py-12">
-          <p class="text-xl my-4">
-            If you have any questions, comments, or concerns, please don't hesitate to contact us. You can reach us by email at basil@miragesys.se. You can also fill out the form below with your name, email address, and message and we will get back to you as soon as possible. We value your feedback and appreciate the opportunity to assist you. 
-          </p>
-        </div>
-  
-        <div class="rounded-lg p-8 lg:col-span-3 lg:p-12">
-          <form id="contact-form" class="space-y-4">
-            <input type="hidden" name="contact_number">
-            <div>
-              <label class="sr-only" for="name">Name</label>
-              <input
-                class="w-full rounded-lg border-gray-200 p-3 text-sm drop-shadow-md"
-                placeholder="Name"
-                type="text"
-                id="name"
-                name="user_name"
-              />
-            </div>
-  
-            <div class="grid grid-cols-1 gap-4">
-              <div>
-                <label class="sr-only" for="email">Email</label>
-                <input
-                  class="w-full rounded-lg border-gray-200 p-3 text-sm drop-shadow-md"
-                  placeholder="Email address"
-                  type="email"
-                  id="email"
-                  name="user_email"
-                />
-              </div>
-  
-            <div>
-              <label class="sr-only" for="message">Message</label>
-              <textarea
-                class="w-full rounded-lg border-gray-200 p-3 text-sm drop-shadow-md"
-                placeholder="Message"
-                rows="8"
-                id="message"
-                name="message"
-              ></textarea>
-            </div>
-                <input
-                type="submit"
-                value="Send"
-                class="group rounded-full sm:bg-teal-600 px-3 w-32 mx-auto cursor-pointer py-3 text-md font-medium text-teal-600 sm:text-white sm:hover:bg-teal-700"
-              >
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('6u-ka9gUjS_B5Au4w');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
+
