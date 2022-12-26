@@ -18,15 +18,17 @@
   <p class="px-4 mt-0.5">Get updates:</p>
   </div>
   <div class="flex my-6">
+    <form action="/subscribe.html" class="flex w-full">
     <input
+      name="EMAIL"
       type="email"
       id="Subscribe"
       placeholder="Ex: anna@exempel.se"
       class="p-4 w-full text-md rounded-l-full border-1 border-teal-600 shadow-md"
     />
-    <a
+    <button
       class="group rounded-r-full bg-teal-600 px-3 py-3 text-md font-medium text-white hover:bg-teal-700 drop-shadow-md border-1 border-teal-600"
-      href="/"
+      type="submit"
     >
       <span class="flex"
         ><p class="px-4 mt-0.5 hidden sm:block">Subscribe</p>
@@ -45,7 +47,8 @@
           />
         </svg>
       </span>
-    </a>
+    </button>
+  </form>
   </div>
 </div>
 <div id="column-2" class="w-full">
