@@ -5,21 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Welcome to Mirage" />
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="manifest" href="assets/img/site.webmanifest">
-  <script href="assets/js/email.js"></script>
-  <script src="https://unpkg.com/htmx.org@1.8.4"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+  <script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
   <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-slate-200">
   <a id="top-anchor"></a>
-  <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 px-16 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header" ></header>
+  <header id="header" class="fixed bg-slate-200 mx-auto w-full top-0 px-16 2xl:px-72 py-1 z-50" hx-get="/components/header.html" hx-trigger="load" aria-label="Site Header"></header>
   <div class="xl:my-[8rem] mx-4 2xl:mx-[18rem]">
     <div id="banner" class="flex flex-wrap gap-20 sm:flex-nowrap mt-[7rem] px-16 justify-center" hx-get="/pages/home/banner.html" hx-trigger="load"></div>
     <a id="products-anchor"></a>
@@ -33,6 +33,7 @@
     <a id="contact-anchor"></a>
     <div class="flex sm:w-96 my-16 justify-self-center mx-auto border-t-4 border-dotted border-teal-700"></div>
     <div id="contact" class="flex flex-wrap xl:flex-nowrap justify-center w-full px-16" hx-get="/pages/contact/contact.html" hx-trigger="load"></div>
+    <div id="modal-place" class=""></div>
   </div>
   <footer aria-label="Site Footer" class="bg-slate-300" hx-get="/components/footer.html" hx-trigger="load"></footer>
 </body>
