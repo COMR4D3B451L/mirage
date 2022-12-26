@@ -1,5 +1,5 @@
 (function() {
-    emailjs.init("6u-ka9gUjS_B5Au4w");
+    emailjs.init('6u-ka9gUjS_B5Au4w');
 })();
 
 window.onload = function() {
