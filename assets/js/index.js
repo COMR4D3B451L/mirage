@@ -1,17 +1,23 @@
 function globalMethods() {
   return {
     enterLine(text) {
-      var newElement = document.createElement("div");
-      newElement.innerHTML = "C:\\Users\\basil>" + text;
-      document.getElementById("input-history").appendChild(newElement);
-      document.querySelector("input").style.width = 0 + "ch";
-      error = text + " is not recognized as an internal or external command."
-      var errorElement = document.createElement("div");
-      errorElement.innerHTML = error;
-      document.getElementById("input-history").appendChild(errorElement);
-      var br = document.createElement("br");
-      document.getElementById("input-history").appendChild(br);
-      
+        if (!text) {
+            var newElement = document.createElement("div");
+            newElement.innerHTML = "C:\\Users\\basil>";
+            document.getElementById("input-history").appendChild(newElement);
+            document.querySelector("input").style.width = 0 + "ch";
+        } else {
+            var newElement = document.createElement("div");
+            newElement.innerHTML = "C:\\Users\\basil>" + text;
+            document.getElementById("input-history").appendChild(newElement);
+            document.querySelector("input").style.width = 0 + "ch";
+            error = "'" + text + "'" + " is not recognized as an internal or external command."
+            var errorElement = document.createElement("div");
+            errorElement.innerHTML = error;
+            document.getElementById("input-history").appendChild(errorElement);
+            var br = document.createElement("br");
+            document.getElementById("input-history").appendChild(br);
+        }      
     },
 
     index() {
