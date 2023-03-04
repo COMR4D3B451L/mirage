@@ -9,22 +9,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="manifest" href="assets/img/site.webmanifest">
+  <script src="/assets/js/index.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
   <script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
   <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,-25" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-  
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-slate-200 bg-cover" style="background-image: url(/assets/img/winbg.jpg)">
-
-    <div class="flex flex-wrap mx-auto my-32 w-5/6 sm:w-2/3 h-[70vh] min-h-[70vh] rounded-md border border-slate-600">
+<body x-data="globalMethods()" class="bg-slate-200 bg-cover" style="background-image: url(/assets/img/winbg.jpg)">
+    <div x-init="index()" class="flex flex-wrap mx-auto my-32 w-5/6 sm:w-2/3 h-[70vh] min-h-[70vh] rounded-md border border-slate-600">
       <div class="flex bg-gray-800 opacity-95 w-full h-8 rounded-t-md select-none">
         <img draggable="false" class="ml-2 my-auto" src="/assets/img/cmd.jpg" alt="cmd">
         <div class="my-auto ml-2 text-white text-sm">Command Prompt</div>
@@ -53,38 +52,18 @@
           </div>
         </div>        
       </div>
-      <div id="main-cmd-body" class="w-full bg-black rounded-b-md overflow-y-scroll" style="height: calc(100% - 2rem);">
+      <div id="main-cmd-body" x-data="{text: '', show: false}" class="w-full bg-black rounded-b-md overflow-y-scroll" style="height: calc(100% - 2rem);">
         <div class="mx-1 text-gray-200 text-sm selection:bg-white selection:text-black" style="font-family: Consolas,monaco,monospace;">
           <p>Portfolio Website [Version 1995.69.1337]</p>
           <p>(c) Basil Aburagheef. All rights reserved.</p>
           <br>
           <div id="input-div">
-            <p>C:\Users\basil><input type="text" id="my-Input" class="bg-black focus:outline-none caret-transparent"></input></basil><span id="cursor-caret" class="text-xs" _="on load repeat forever toggle .hidden wait 500ms end ">▃</span></p>
+            <div id="input-history"></div>
+            <span x-show="show" x-text="text"></span>
+            <p>C:\Users\basil><input type="text" x-on:keydown.enter="enterLine(text), text = ''" id="my-Input" x-model="text" class="bg-black focus:outline-none caret-transparent"></input><span id="cursor-caret" class="text-xs" _="on load repeat forever toggle .hidden wait 500ms end ">▃</span></p>
           </div>
         </div>
       </div>
     </div>
 </body>
-
-<script>
-  var input = document.getElementById('my-Input');
-  input.focus();
-  input.select();
-  var input = document.querySelector('input'); // get the input element
-  input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
-  resizeInput.call(input); // immediately call the function
-
-  function resizeInput() {
-    this.style.width = this.value.length + "ch";
-  }
-  var mainCmd = document.getElementById("main-cmd-body");
-  mainCmd.addEventListener("click", function() {
-    // Do something when the button is clicked
-    input.focus();
-  });
-
-  
-
-</script>
-
 </html>
