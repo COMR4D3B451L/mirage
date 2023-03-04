@@ -1,24 +1,46 @@
 function globalMethods() {
   return {
     enterLine(text) {
+        const inputHistory = document.getElementById("input-history");
+        const input = document.querySelector("input");
+        const newElement = document.createElement("div");
+        const ansElement = document.createElement("div");
+        const fragment = document.createDocumentFragment();
+        const cursorWidth = 0;
+      
+        newElement.innerHTML = `C:\\Users\\basil>${text}`;
+        fragment.appendChild(ansElement);
+
+        function getCommand(cmd) {
+            const br = document.createElement("br");
+            ansElement.innerHTML = cmd;
+            fragment.appendChild(ansElement);
+            fragment.appendChild(br);
+        }
+      
         if (!text) {
-            var newElement = document.createElement("div");
-            newElement.innerHTML = "C:\\Users\\basil>";
-            document.getElementById("input-history").appendChild(newElement);
-            document.querySelector("input").style.width = 0 + "ch";
-        } else {
-            var newElement = document.createElement("div");
-            newElement.innerHTML = "C:\\Users\\basil>" + text;
-            document.getElementById("input-history").appendChild(newElement);
-            document.querySelector("input").style.width = 0 + "ch";
-            error = "'" + text + "'" + " is not recognized as an internal or external command."
-            var errorElement = document.createElement("div");
-            errorElement.innerHTML = error;
-            document.getElementById("input-history").appendChild(errorElement);
-            var br = document.createElement("br");
-            document.getElementById("input-history").appendChild(br);
-        }      
-    },
+            inputHistory.appendChild(newElement);
+          } else {
+            inputHistory.appendChild(newElement);
+            switch (text) {
+              case "--skills":
+                getCommand('Test');
+                break;
+              case "help":
+                getCommand('Coming Soon');
+                break;
+              default:
+                const error = `'${text}' is not recognized as an internal or external command.`;
+                ansElement.innerHTML = error;
+                fragment.appendChild(newElement);
+                fragment.appendChild(ansElement);
+                fragment.appendChild(br);
+                break;
+            }
+            inputHistory.appendChild(fragment);
+          }
+        input.style.width = `${cursorWidth}ch`;
+      },      
 
     index() {
       window.addEventListener("load", function () {
@@ -43,7 +65,7 @@ function globalMethods() {
         cursor_caret.classList.remove("opacity-0");
       });
 
-      document.addEventListener("keydown", function(event) {
+      document.addEventListener("keyup", function(event) {
         cursor_caret.classList.remove("opacity-0");
         input.focus();
       });
