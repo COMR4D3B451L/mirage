@@ -20,7 +20,8 @@
 
 <body x-data="globalMethods()" class="bg-slate-200 sm:bg-cover" style="background-image: url(/assets/img/winbg.jpg)">
     <div class="relative flex flex-wrap sm:mx-20 sm:my-20">
-      <div id="cmd-container" x-init="index(), dragWindow($el)" class="flex flex-wrap w-5/6 sm:w-2/3 h-[70vh] min-h-[70vh] rounded-md border border-slate-600">
+      <div id="cmd-container" x-init="index(), dragWindow($el)" class="resizeable flex flex-wrap w-5/6 sm:w-2/3 h-[70vh] min-h-[20vh] min-w-[40vh] rounded-md border border-slate-600">
+        <div class="resizeable-handle h-2 absolute bottom-0 right-0 w-2 cursor-se-resize"></div>
         <div id="cmd-container-header" class="flex bg-[#202020] opacity-95 w-full h-8 rounded-t-md select-none">
           <img draggable="false" class="ml-2 my-auto" src="/assets/img/cmd.jpg" alt="cmd">
           <div class="my-auto ml-2 text-white text-sm">Command Prompt</div>
@@ -53,6 +54,8 @@
           <div class="mx-1 text-gray-200 text-sm selection:bg-white selection:text-black" style="font-family: Consolas,monaco,monospace;">
             <p>Portfolio Website [Version 1995.69.1337]</p>
             <p>(c) Basil Aburagheef. All rights reserved.</p>
+            <br>
+            <p>Type "help", "contact" or "about" for more information.</p>
             <br>
             <div id="input-div">
               <div id="input-history"></div>

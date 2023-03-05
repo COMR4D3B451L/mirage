@@ -23,8 +23,11 @@ function globalMethods() {
           } else {
             inputHistory.appendChild(newElement);
             switch (text) {
-              case "--skills":
+              case "about":
                 getCommand('Test');
+                break;
+              case "contact":
+                getCommand('info');
                 break;
               case "help":
                 getCommand('Coming Soon');
@@ -122,6 +125,35 @@ function globalMethods() {
             document.onmousemove = null;
         }
         }
+        var resizeable = document.querySelector('.resizeable');
+        var handle = document.querySelector('.resizeable-handle');
+        var isResizing = false;
+        var lastX, lastY;
+
+        handle.addEventListener('mousedown', function (e) {
+          isResizing = true;
+          lastX = e.clientX;
+          lastY = e.clientY;
+        });
+
+        document.addEventListener('mousemove', function (e) {
+          if (!isResizing) return;
+
+          var width = resizeable.offsetWidth;
+          var newWidth = width + (e.clientX - lastX);
+          resizeable.style.width = newWidth + 'px';
+          lastX = e.clientX;
+
+          var height = resizeable.offsetHeight;
+          var newHeight = height + (e.clientY - lastY);
+          resizeable.style.height = newHeight + 'px';
+          lastY = e.clientY;
+        });
+
+        document.addEventListener('mouseup', function (e) {
+          isResizing = false;
+        });
+
     },
     cursorCaretBlink(el) {
         window.addEventListener("load", function () {
